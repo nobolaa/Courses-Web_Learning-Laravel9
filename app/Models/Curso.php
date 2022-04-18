@@ -10,4 +10,6 @@ class Curso extends Model
     use HasFactory;
 
     protected $table = "cursos"; //no hace falta si sigue la convencion
+    //protected $fillable = ["name", "descripcion", "categoria"];
+    protected $guarded = []; //ignora estos campos al hacer la asignacion masiva
 }
