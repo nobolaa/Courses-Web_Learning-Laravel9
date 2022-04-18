@@ -28,8 +28,20 @@ class CursoController extends Controller
         return redirect()->route('cursos.show', $curso);
     }
 
-    public function show($id){
-        $curso = Curso::find($id);
+    public function show(Curso $curso){
         return view('cursos.show', compact('curso')); //compact = ['curso' => $curso]*/
+    }
+    
+    public function edit(Curso $curso){
+        return view('cursos.edit', compact('curso')); //compact = ['curso' => $curso]*/
+    }
+
+    public function update(Request $request, Curso $curso){
+        $curso->name = $request->name;
+        $curso->descripcion = $request->descripcion;
+        $curso->categoria = $request->categoria;
+
+        $curso->save();
+        return redirect()->route('cursos.show', $curso);//compact = ['curso' => $curso]*/
     }
 }
