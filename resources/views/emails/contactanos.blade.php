@@ -9,5 +9,9 @@
 <body>
     <h1>Correo electónico</h1>
     <p>Este es el primer correo que mandaré por Laravel</p>
+
+    <p><strong>Nombre: </strong> {{$informacion['name']}} </p>
+    <p><strong>Correo: </strong> {{$informacion['correo']}} </p>
+    <p><strong>Mensaje: </strong> {{$informacion['mensaje']}} </p>
 </body>
 </html>
