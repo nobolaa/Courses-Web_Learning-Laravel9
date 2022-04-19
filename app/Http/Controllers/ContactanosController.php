@@ -23,6 +23,6 @@ class ContactanosController extends Controller
         $correo = new ContactanosMailable($request->all());
         Mail::to('nabilaliasserhaou@gmail.com')->send($correo);
 
-        return "Mensaje enviado";
+        return redirect()->route('home')->with('info', 'Mensaje enviado');
     }
 }
